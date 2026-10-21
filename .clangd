@@ -1,0 +1,11 @@
+# C++20 for C++ sources and headers (concepts, ranges, etc.)
+If:
+  PathMatch: [.*\.h, .*\.hpp, .*\.cpp, .*\.cc, .*\.cxx]
+CompileFlags:
+  Add: [-std=c++20]
+---
+# Parse .h as C++ instead of clangd's default Objective-C++ guess
+If:
+  PathMatch: .*\.h
+CompileFlags:
+  Add: [-xc++-header]
